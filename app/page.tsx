@@ -1,5 +1,5 @@
-import HeroCarousel from "@/components/HeroCarousel"
-import Searchbar from "@/components/Searchbar"
+import HeroCarousel from "@/components/HeroCarousel/HeroCarousel"
+import Searchbar from "@/components/Searchbar/Searchbar"
 import Image from "next/image"
 
 const Home = () => {

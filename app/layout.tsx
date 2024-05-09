@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ['300', '400', '500', '600', '700'] });
 
 export const metadata: Metadata = {
-  title: "Scraper | Price Tracker",
+  title: "Scraper | Amazon Price Tracker",
   description: "Track product prices and save money on online shopping",
 };
 
