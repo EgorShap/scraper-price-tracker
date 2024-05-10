@@ -51,12 +51,9 @@ export async function scrapeAmazonProduct(url: string) {
         const imageUrls = Object.keys(JSON.parse(images))
 
         const currency = extractCurrencySymbol($('.a-price.a-text-price span.a-offscreen'))
-        const discountRate = $('.savingsPercentage').text().match(/\d+/)?.[0]
+        const discountRate = $('.savingsPercentage').text().match(/\d+/)?.[0] || 0
 
         const description = extractDescription($)
-
-
-        // console.log({title, currentPrice, originalPrice, outOfStock, imageUrls, currency, discountRate})
 
         const data = {
             url,
@@ -72,9 +69,9 @@ export async function scrapeAmazonProduct(url: string) {
             stars: 4.5,
             isOutOfStock: outOfStock,
             description,
-            lowerPrice: Number(currentPrice) || Number(originalPrice),
+            lowestPrice: Number(currentPrice) || Number(originalPrice),
             highestPrice: Number(originalPrice) || Number(currentPrice),
-            average: Number(currentPrice) || Number(originalPrice)
+            averagePrice: Number(currentPrice) || Number(originalPrice)
         }
 
         return data;
